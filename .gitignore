@@ -1,3 +1,4 @@
+# Maven
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
@@ -31,3 +32,59 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# ===== ADD THESE FOR YOUR PROJECT =====
+
+# Frontend files
+frontend/node_modules/
+frontend/package-lock.json
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# React build (if you add React later)
+frontend/build/
+frontend/.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Database files
+*.db
+*.h2.db
+*.trace.db
+postgres_data/
+
+# Docker
+*.jar
+*.war
+*.ear
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# H2 database (in-memory files)
+*.h2.db
+*.mv.db
+*.trace.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.local
