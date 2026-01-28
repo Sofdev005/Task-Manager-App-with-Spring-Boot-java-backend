@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1><i class="fas fa-tasks"></i> Task Manager</h1>
+        <p class="subtitle">Organize your work efficiently</p>
+    </header>
+
+    <div class="app-content">
+        <!-- Left: Add/Edit Form -->
+        <section class="form-section">
+            <div class="card">
+                <h2 id="formTitle"><i class="fas fa-plus-circle"></i> Add New Task</h2>
+                <form id="taskForm">
+                    <input type="hidden" id="taskId" value="">
+
+                    <div class="form-group">
+                        <label for="title"><i class="fas fa-heading"></i> Title *</label>
+                        <input type="text" id="title" placeholder="Enter task title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                        <textarea id="description" placeholder="Enter task description (optional)"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dueDate"><i class="fas fa-calendar-alt"></i> Due Date</label>
+                            <input type="date" id="dueDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="priority"><i class="fas fa-flag"></i> Priority</label>
+                            <select id="priority">
+                                <option value="LOW">Low</option>
+                                <option value="NORMAL" selected>Normal</option>
+                                <option value="HIGH">High</option>
+                                <option value="URGENT">Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="statusField" style="display: none;">
+                        <label for="status"><i class="fas fa-check-circle"></i> Status</label>
+                        <select id="status">
+                            <option value="OPEN">Open</option>
+                            <option value="COMPLETE">Complete</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Right: Tasks List -->
+        <section class="tasks-section">
+            <div class="card">
+                <div class="tasks-header">
+                    <h2><i class="fas fa-list-check"></i> Tasks</h2>
+                    <div class="task-count">
+                        <span id="taskCount">0</span> tasks
+                    </div>
+                </div>
+
+                <div id="tasksContainer">
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list fa-3x"></i>
+                        <p>No tasks yet. Add your first task!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Task Manager &copy; 2026 | Mode : <span id="backendStatus" class="status-badge status-offline">Checking...</span></p>
+    </footer>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
